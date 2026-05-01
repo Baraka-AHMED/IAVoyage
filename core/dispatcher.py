@@ -1,4 +1,6 @@
 from tools import budget, lists, context, travel
+from core.validator import validate_action
+from tools import memory
 
 def dispatch(actions):
     if not actions:
@@ -9,6 +11,12 @@ def dispatch(actions):
     for action in actions:
 
         if not isinstance(action, dict):
+            continue
+
+        is_valid, error = validate_action(action)
+
+        if not is_valid:
+            results.append(f"ERR {error}")
             continue
 
         action_type = action.get("type")
@@ -84,11 +92,14 @@ def dispatch(actions):
         elif action_type == "CLEAR_TIMELINE":
             results.append(travel.clear_timeline())
 
+        elif action_type == "UPDATE_USER_PROFILE":
+            results.append(memory.update_user_profile(args[0]))
+
+        elif action_type == "GET_USER_PROFILE":
+            results.append(memory.get_user_profile())
+
         else:
             results.append(f"Action inconnue: {action_type}")
-
-
-
 
         print("ACTION EXEC:", action_type, args)
 

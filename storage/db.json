@@ -1,30 +1,11 @@
 {
-  "budget": 1000.0,
-  "expenses": [
-    {
-      "amount": 20.0,
-      "category": "snack"
+    "budget": 500,
+    "expenses": [],
+    "lists": {},
+    "trip_context": {},
+    "timeline": {},
+    "user_profile": {
+        "preferences": ["restaurant", "culture"],
+        "travel_style": "chill"
     }
-  ],
-  "lists": {
-    "valise": [
-      {
-        "name": "t-shirt",
-        "checked": false
-      },
-      {
-        "name": "t-shirt",
-        "checked": false
-      },
-      {
-        "name": "t-shirt",
-        "checked": false
-      }
-    ]
-  },
-  "trip_context": {
-    "destination": "Lyon",
-    "hotel": "La Part Dieu",
-    "dates": "7-12 mai"
-  }
 }

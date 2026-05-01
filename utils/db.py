@@ -5,7 +5,15 @@ DB_PATH = "storage/db.json"
 
 def load_db():
     if not os.path.exists(DB_PATH):
-        return {}
+        return {
+            "budget": 0,
+            "expenses": [],
+            "lists": {},
+            "trip_context": {},
+            "timeline": {},
+            "user_profile": {}
+        }
+
     with open(DB_PATH, "r", encoding="utf-8") as f:
         return json.load(f)
 

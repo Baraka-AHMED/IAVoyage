@@ -77,7 +77,9 @@ def chat(msg: Message):
     - GET_TIMELINE
     - CLEAR_TIMELINE
 
-
+    MEMORY:
+    - UPDATE_USER_PROFILE
+    - GET_USER_PROFILE
 
     ---
 
@@ -163,6 +165,7 @@ def chat(msg: Message):
         }
 
     return {"message": response}
+
 
 
 
